@@ -40,18 +40,14 @@ public class BaseController {
 	
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public ModelAndView signup() {
-    	
-		System.out.println("signup page");
-    	
+    	    	
     	return new ModelAndView("signup", "signupForm", new SignupForm());
     }
  
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String create(Model model, SignupForm signupForm, 
     		BindingResult result, RedirectAttributes redirectAttributes) {
-    	
-    	System.out.println("create");
-    	
+    	    	
         if (result.hasErrors()) {
             return "index";
         }
